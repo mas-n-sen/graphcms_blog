@@ -46,7 +46,7 @@ export async function getStaticProps ({ params }) {
 export async function getStaticPaths (){
     const posts = await getPosts();
     return {
-        paths : posts.edges.map(( {node: {slug}}) => ({params: {slug}})),
+        paths : posts.map(({slug}) => ({params: {slug}})),
         fallback: true,
     }
 }
