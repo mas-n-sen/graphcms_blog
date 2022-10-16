@@ -39,7 +39,8 @@ export async function getStaticProps ({ params }) {
     const comments = (await getComments(params.slug)) || [];
   
     return {
-      props : { post: data, comments: comments }
+      props : { post: data, comments: comments },
+      revalidate: 100,
     }
 }
 
