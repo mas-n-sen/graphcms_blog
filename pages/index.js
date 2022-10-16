@@ -29,7 +29,7 @@ import {FeaturedPosts} from '../sections'
 
 export default Home
 
-export async function getStaticProps () {
+export async function getServerSideProps () {
   const posts = (await getPosts()) || [];
 
   return {
